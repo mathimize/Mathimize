@@ -1,0 +1,23 @@
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
+           @*BasicArithmeticResultViewModel*@
+@{
+    Layout = "~/Views/Shared/_LeftMenuLayout.cshtml";
+}
+<div>
+    <h3> shared
+        @Model.Op</h3>
+    @using (Html.BeginForm(@Model.Op, @ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString(), FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        
+
+        <div class="container">
+            @Html.Partial("_" + Model.Op + "Form", Model)
+        </div>
+        <button type="submit" class="btn btn-inverse">
+            Submit</button>
+        <input type="button" class="btn btn-inverse" value="Export to PDF" id="pdf" />
+    }
+
+    @Html.Partial("_" + Model.Op + "Result", Model)
+
+</div>
