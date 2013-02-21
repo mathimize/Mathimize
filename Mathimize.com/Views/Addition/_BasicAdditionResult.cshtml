@@ -1,8 +1,29 @@
-﻿@model Mathimize.com.Models.Terms
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
 @{
+    if (Model != null && ((Mathimize.com.Models.BasicArithmeticResultViewModel)Model).Terms != null)
+    {
 
-    @Model.Term1<br />
-    @:+ @Model.Term2<br />
-                    }
-<hr />
-&nbsp;
+        int i = 0;
+
+        for (int r = 0; r < Model.Rows; r++)
+        {
+    <div class="row">
+        @for (int c = 0; c < Model.Cols; c++)
+        {
+            <div class="span1 border math_box">
+                
+                @(((Mathimize.com.Models.BasicArithmeticResultViewModel)Model).Terms[i].Term1)<br />
+                
+                + @(((Mathimize.com.Models.BasicArithmeticResultViewModel)Model).Terms[i++].Term2)<br />
+                <hr />
+                &nbsp;
+            </div>
+                    
+        }
+    </div>
+        }
+
+    }
+
+
+}

@@ -1,8 +1,29 @@
-﻿@model Mathimize.com.Models.HourMinutes
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
+           @*HourMinutes*@
 @{
-    
-    @Model.Hour @:: 30
+        if (Model != null && ((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes != null)
+        {
+        
+        <h2>@Model.Op</h2>
+        
+            int i = 0;
 
-    <img src="../../images/clockface.gif" />
-    
-                    }
+            for (int r = 0; r < Model.Rows; r++)
+            {
+        <div class="row">
+            @for (int c = 0; c < Model.Cols; c++)
+            {
+                <div class="span2 border time_box">
+
+                    @(((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Hour) : 30
+                    <img src="../../images/clockface.gif" />
+                </div>
+                    
+            }
+        </div>
+            }
+
+        }
+
+
+    }

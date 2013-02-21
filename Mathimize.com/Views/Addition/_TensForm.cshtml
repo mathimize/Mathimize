@@ -1,4 +1,5 @@
-﻿@model Mathimize.com.Models.BasicArithmeticResultViewModel
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
+           @*BasicArithmeticResultViewModel*@
 @{
 //    ViewBag.Title = "Tens";
     //Layout = "_FormLayout.cshtml";
@@ -22,8 +23,8 @@
         <div class="row control-group">
             <label class="control-label small" for="MaxInt">
                 Max Int</label>
-            @Html.TextBoxFor(m => m.MaxInt, new { @class = "input-mini", @Value = (Model == null ? "10" : Model.MaxInt.ToString()) })
-            @Html.ValidationMessageFor(m => m.MaxInt)
+            @Html.TextBoxFor(m => ((Mathimize.com.Models.BasicArithmeticResultViewModel)m).MaxInt, new { @class = "input-mini", @Value = (Model == null ? "10" : ((Mathimize.com.Models.BasicArithmeticResultViewModel)Model).MaxInt.ToString()) })
+            @Html.ValidationMessageFor(m => ((Mathimize.com.Models.BasicArithmeticResultViewModel)m).MaxInt)
         </div>
         <div class="row">
             @Html.HiddenFor(m => m.ResultId)
