@@ -90,36 +90,11 @@
     <Content Include="Content\img\glyphicons-halflings.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
-    <Content Include="Content\themes\base\jquery.ui.all.css" />
-    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
-    <Content Include="Content\themes\base\jquery.ui.base.css" />
-    <Content Include="Content\themes\base\jquery.ui.button.css" />
-    <Content Include="Content\themes\base\jquery.ui.core.css" />
-    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
-    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
-    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
-    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
-    <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
-    <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="images\clockface.gif" />
     <Content Include="images\msg_arrow.gif" />
+    <Content Include="Libraries\EO.Pdf.dll" />
+    <Content Include="Libraries\Newtonsoft.Json.dll" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.js" />
@@ -182,24 +157,24 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\OldMath\Tens.cshtml" />
-    <Content Include="Views\OldMath\BasicAddition.cshtml" />
     <Content Include="Views\Shared\_NoLeftMenuLayout.cshtml" />
     <Content Include="Views\Shared\_TopNavBar.cshtml" />
-    <Content Include="Views\Addition\old_FormLayout.cshtml" />
-    <Content Include="Views\Addition\old_PDFLayout.cshtml" />
-    <Content Include="Views\Addition\oldTens.cshtml" />
     <Content Include="Views\Addition\_TensForm.cshtml" />
     <Content Include="Views\Addition\_TensResult.cshtml" />
     <Content Include="Views\Addition\_BasicAdditionForm.cshtml" />
     <Content Include="Views\Addition\_BasicAdditionResult.cshtml" />
     <Content Include="Views\Addition\_DoublesForm.cshtml" />
     <Content Include="Views\Addition\_DoublesResult.cshtml" />
-    <Content Include="Views\Addition\Index.cshtml" />
     <Content Include="Views\Time\PDFView.cshtml" />
     <Content Include="Views\Time\WebsiteView.cshtml" />
     <Content Include="Views\Time\_OClocksResult.cshtml" />
     <Content Include="Views\Time\_OClocksForm.cshtml" />
+    <None Include="Content\bootstrap\bootswatch.less" />
+    <None Include="Content\bootstrap\variables.less" />
+    <Content Include="Views\Addition\PDFView.cshtml" />
+    <Content Include="Views\Addition\WebsiteView.cshtml" />
+    <Content Include="Views\Time\_HalvesForm.cshtml" />
+    <Content Include="Views\Time\_HalvesResult.cshtml" />
     <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
     <None Include="_bin_deployableAssemblies\WebMatrix.WebData.xml" />
     <None Include="_bin_deployableAssemblies\WebMatrix.WebData.dll" />
@@ -228,18 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_LeftMenuLayout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\OldMath\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Views\OldMath\PDFViewWrapper.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\OldMath\_BoxedResults.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\OldMath\Doubles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\mathimize - FTP.pubxml" />
