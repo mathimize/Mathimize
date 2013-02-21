@@ -1,0 +1,66 @@
+﻿@model Mathimize.com.Models.BasicArithmeticResultViewModel
+@{
+    ViewBag.Title = "Tens";
+    //Layout = "_FormLayout.cshtml";
+}
+
+@section Form {
+    <div class="span3">
+        <div class="row control-group">
+            <label class="control-label small" for="Rows">
+                Rows</label>
+            @Html.TextBoxFor(m => m.Rows, new { @class = "input-mini", @Value = (Model == null ? "9" : Model.Rows.ToString()) })
+            @Html.ValidationMessageFor(m => m.Rows)
+        </div>
+        <div class="row control-group">
+            <label class="control-label small" for="Cols">
+                Cols</label>
+            @Html.TextBoxFor(m => m.Cols, new { @class = "input-mini", @Value = (Model == null ? "7" : Model.Cols.ToString()) })
+            @Html.ValidationMessageFor(m => m.Cols)
+        </div>
+    </div>
+    <div class="span3">
+        <div class="row control-group">
+            <label class="control-label small" for="MaxInt">
+                Max Int</label>
+            @Html.TextBoxFor(m => m.MaxInt, new { @class = "input-mini", @Value = (Model == null ? "10" : Model.MaxInt.ToString()) })
+            @Html.ValidationMessageFor(m => m.MaxInt)
+        </div>
+        <div class="row">
+            @Html.HiddenFor(m => m.ResultId)
+        </div>
+    </div>
+}
+@section BoxedResults{
+    @{
+        if (Model != null && Model.Terms != null)
+        {
+        
+        <h2>@Model.Op</h2>
+        
+            int i = 0;
+
+            for (int r = 0; r < Model.Rows; r++)
+            {
+        <div class="row">
+            @for (int c = 0; c < Model.Cols; c++)
+            {
+                <div class="span1 border math_box">
+                    @{
+
+                        @Model.Terms[i++].Term1<br />
+                        @:+ ____<br />
+                }
+                    <hr />
+                    10
+                </div>
+                    
+            }
+        </div>
+            }
+
+        }
+
+
+    }
+}

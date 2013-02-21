@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Header
+{
+    <script src="@Url.Content("~/Scripts/Mathimize/CustomValidation.js")" type="text/javascript"></script>
+    @RenderSection("Header", false)
+}
+<!--Body content-->
+<div class="container">
+    @Html.Partial("_TopNavBar")
+    <div class="row">
+        <div class="span12">
+            
+            @RenderBody()
+            @*<input type="text" placeholder="Text input">
+                <div class="input-append">
+                    <input class="span2" id="appendedInputButton" type="text">
+                    <button class="btn" type="button">
+                        Go!</button>
+                    <br />
+                    <svg version="1.1" width="400" height="300">
+						<circle cx="135" cy="60" r="53" fill="white" stroke="#cccccc" stroke-width="2"></circle>
+						<line x1="35" y1="60" x2="235" y2="60" stroke="#bbbbbb" stroke-width="2"></line>
+					</svg>
+                </div>*@
+        </div>
+    </div>
+</div>
