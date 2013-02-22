@@ -1,0 +1,74 @@
+﻿@model Mathimize.com.Models.BasicArithmeticResultViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LeftMenuLayout.cshtml";
+}
+@section Header {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnTens").click(function () {
+                window.location = "/Addition/Tens";
+            });
+            $("#btnDoubles").click(function () {
+                window.location = "/Addition/Doubles";
+            });
+            $("#btnBasicAddition").click(function () {
+                window.location = "/Addition/BasicAddition";
+            });
+        });
+    </script>
+}
+<h2>Math</h2>
+<div>
+    <div class="border padded_border">
+    <p>Your kid can add and subtract. Awesome.</p>
+    <p>But how fast is he? Does he still use his fingers? How long does he take to answer 8 + 7? <br /> 
+    <br />
+    Automatic recall of basic math facts (math fluency) is generally considered a key foundation for higher level math skills. The sooner your kid can memorize the basic math facts, the more fluent he'll be at Math.
+    <br />My 7 year old can finish 63 single digit additions under 5 minutes. He can do multiple digits, but that's not what we work on. My goal is not to teach him addition, but to get him to memorize the basic math facts and be able to retrieve from memory or simply take shortcuts when executing these basic math operations. I want this to be like a second language for him. 
+    <br />
+    <br />He should be able to quickly solve 99 + 99 in his head by figuring out that 99 + 99 = 100 + 100 - 2 = 98, instead of asking for pencil and paper and going the classic way: 9 + 9 = 8, carry 1, etc...
+    </p>
+    <p>
+     All these worksheets should be timed. Time will vary for each kid, but set a goal. Give him rewards for finishing the worksheet under the specified time. Next time, try to make it a bit more or as challenging as the last one. Make it a game. Make it fun. Make him enjoy Math, not hate it.
+     </p>
+    
+    <b>Tens</b>
+    <p>
+        He should first memorize what I call, the "Tens." <br />
+        Have him practice:<br />
+        8 + ___ = 10<br />
+        3 + ___ = 10
+        <br />etc. The goal is to memorize all the ways numbers add up to 10.
+        <br />
+        <br />
+        <input type="button" class="btn-inverse btn-block" value="Create [Tens] Worksheet" id="btnTens" />
+    </p>
+    <b>Doubles</b>
+    <p>
+        Next, work on "Doubles."
+        <br />
+        As important as the "Tens", have him work on and memorize all the basic Doubles: 
+        <br />4 + 4 = ___
+        <br />8 + 8 = ___
+        <br />7 + 7 = ___
+        <br />etc.
+
+        <br /><br />
+        <input type="button" class="btn-inverse btn-block" value="Create [Doubles] Worksheet" id="btnDoubles" />
+    </p>
+
+    <b>Basic Addition</b>
+    <p>
+        Once he knows the Tens and Doubles, he should be ready to quickly do any single digit operations. Work with him. Look over his shoulder and see which ones he's taking longer. <br />
+        This is also a great opportunity to teach him the shortcuts. If he has trouble with 7 + 8, teach him shortcuts. <br />
+        "Do you remember what 7 + 7 is? Do you remember that 8 is the same as 7 + 1? So, 8 + 7 = 7 + 7 + 1."
+        9 + 7 = ___
+        <br />7 + 6 = ___
+        <br />etc.
+        <br />
+        <br />
+        <input type="button" class="btn-inverse btn-block" value="Create [Basic Addition] Worksheet" id="btnBasicAddition" />
+    </p>
+    </div>
+</div>
