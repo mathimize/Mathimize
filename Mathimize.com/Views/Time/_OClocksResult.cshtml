@@ -4,7 +4,6 @@
         if (Model != null && ((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes != null)
         {
         
-        <h2>@Model.Op</h2>
         
             int i = 0;
 
@@ -15,7 +14,7 @@
             {
                 <div class="span2 border time_box">
 
-                    @(((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Hour) : 00
+                    @(((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i++].Hour) : 00
                     <img src="../../images/clockface.gif" />
                 </div>
                     

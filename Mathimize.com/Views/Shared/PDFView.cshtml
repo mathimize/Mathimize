@@ -1,10 +1,11 @@
 ﻿@model Mathimize.com.Models.AMmathimizeViewModel
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_PDFLayout.cshtml";
 }
 <div>
-    <h3>shared 
+    <h3> 
         @Model.Op</h3>
     
     @Html.Partial("_" + Model.Op + "Result", Model)
+    
 </div>
