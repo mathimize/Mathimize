@@ -1,0 +1,80 @@
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
+@*HourMinutes*@
+@{
+    if (Model != null && ((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes != null)
+    {
+
+
+        int i = 0;
+
+        for (int r = 0; r < Model.Rows; r++)
+        {
+    <div class="row">
+        @for (int c = 0; c < Model.Cols; c++)
+        {
+                
+                
+            <div class="span2 border time_box">
+                <p>
+                    @{
+                        
+                        int hours = ((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Hour;
+                        int minutes = (((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Minutes / 5) * 5;
+                        //center (82, 85)
+                        
+                        int minutesX = 82;
+                        int minutesY = 30;
+                        int hoursX = 82;
+                        int hoursY = 50;
+
+                        double radians = minutes * 6 * Math.PI / 180;
+                        // x' = x0 + (x-x0) * cos(90) - (y-y0) * sin(90)
+                        // y' = y0 + (x-x0) * sin(90) + (y-y0) * cos(90)
+                        int newminutesX = 82 + (int)((minutesX - 82) * Math.Cos(radians) - (minutesY - 85) * Math.Sin(radians));
+                        int newminutesY = 85 + (int)((minutesX - 82) * Math.Sin(radians) + (minutesY - 85) * Math.Cos(radians));
+
+                        radians = (hours * 30 + minutes * 2.5) * Math.PI / 180;
+                        int newHoursX = 82 + (int)((hoursX - 82) * Math.Cos(radians) - (hoursY - 85) * Math.Sin(radians));
+                        int newHoursY = 85 + (int)((hoursX - 82) * Math.Sin(radians) + (hoursY - 85) * Math.Cos(radians));
+
+                        if (minutes == 0)
+                        {
+                                    
+                        }
+                        else if (minutes == 15)
+                        {
+                                    
+                        }
+                        else if (minutes == 30)
+                        {
+                                    
+                        }
+                        else if (minutes == 45)
+                        {
+                                    
+                        } 
+                        
+                    }
+                </p>
+                <svg version="1.1" class="svg_time_box">
+
+						@*<circle cx="82" cy="105" r="53" fill="white" stroke="#cccccc" stroke-width="2"></circle>*@
+                        
+						<line x1="82" y1="85" x2="@newHoursX" y2="@newHoursY" stroke="#333" stroke-width="3"></line>
+						<line x1="82" y1="85" x2="@newminutesX" y2="@newminutesY" stroke="#333" stroke-width="3"></line>
+			    </svg>
+                
+                <img src="../../images/clockface.gif" />
+                @{
+            i++;
+                }
+            </div>
+                    
+        }
+    </div>
+        }
+
+    }
+
+
+}

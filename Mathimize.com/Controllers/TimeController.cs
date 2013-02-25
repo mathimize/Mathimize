@@ -11,7 +11,7 @@ using System.Configuration;
 
 namespace Mathimize.com.Controllers
 {
-    public class TimeController : Controller
+    public class TimeController : AMathimizeController
     {
         //
         // GET: /Time/
@@ -33,7 +33,7 @@ namespace Mathimize.com.Controllers
             }
             else
             {
-                TimeResultViewModel model = new TimeResultViewModel() { Op = "OClocks", HourMinutes = null, Cols = 3, Rows = 6 };
+                TimeResultViewModel model = new TimeResultViewModel() { Op = "OClocks", HourMinutes = null, Cols = 4, Rows = 6 };
                 return View("WebsiteView", model);
                 //return View("Tens", "_FormLayout", model);
             }
@@ -68,13 +68,11 @@ namespace Mathimize.com.Controllers
             {
                 TimeResultViewModel model = (TimeResultViewModel)Session[resultId];
                 return View("WebsiteView", model);
-                //return View("Tens", "_FormLayout", model );
             }
             else
             {
-                TimeResultViewModel model = new TimeResultViewModel() { Op = "Halves", HourMinutes = null, Cols = 3, Rows = 6 };
+                TimeResultViewModel model = new TimeResultViewModel() { Op = "Halves", HourMinutes = null, Cols = 4, Rows = 6 };
                 return View("WebsiteView", model);
-                //return View("Tens", "_FormLayout", model);
             }
         }
 
@@ -97,30 +95,130 @@ namespace Mathimize.com.Controllers
 
 
 
-
-
-        public string RenderViewAsString(string viewName, object model)
+        [HttpGet]
+        public ActionResult Quarters(string resultId)
         {
-            // create a string writer to receive the HTML code
-            StringWriter stringWriter = new StringWriter();
-
-            // get the view to render
-            ViewEngineResult viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, null);
-            // create a context to render a view based on a model
-            ViewContext viewContext = new ViewContext(
-                    ControllerContext,
-                    viewResult.View,
-                    new ViewDataDictionary(model),
-                    new TempDataDictionary(),
-                    stringWriter
-                    );
-
-            // render the view to a HTML code
-            viewResult.View.Render(viewContext, stringWriter);
-
-            // return the HTML code
-            return stringWriter.ToString();
+            if (!string.IsNullOrEmpty(resultId))
+            {
+                TimeResultViewModel model = (TimeResultViewModel)Session[resultId];
+                return View("WebsiteView", model);
+            }
+            else
+            {
+                TimeResultViewModel model = new TimeResultViewModel() { Op = "Quarters", HourMinutes = null, Cols = 4, Rows = 6 };
+                return View("WebsiteView", model);
+            }
         }
+
+
+        [HttpPost]
+        public ActionResult Quarters(TimeResultViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                MathService svc = new MathService();
+                TimeResultViewModel newModel = svc.GetTimeResultViewModel(model);
+                newModel.Op = "Quarters";
+                return RedirectToAction("Quarters", new { resultId = newModel.ResultId });
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+
+        [HttpGet]
+        public ActionResult QuartersText(string resultId)
+        {
+            if (!string.IsNullOrEmpty(resultId))
+            {
+                TimeResultViewModel model = (TimeResultViewModel)Session[resultId];
+                return View("WebsiteView", model);
+            }
+            else
+            {
+                TimeResultViewModel model = new TimeResultViewModel() { Op = "QuartersText", HourMinutes = null, Cols = 4, Rows = 6 };
+                return View("WebsiteView", model);
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult QuartersText(TimeResultViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                MathService svc = new MathService();
+                TimeResultViewModel newModel = svc.GetTimeResultViewModel(model);
+                newModel.Op = "QuartersText";
+                return RedirectToAction("QuartersText", new { resultId = newModel.ResultId });
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+
+        [HttpGet]
+        public ActionResult TellTime(string resultId)
+        {
+            if (!string.IsNullOrEmpty(resultId))
+            {
+                TimeResultViewModel model = (TimeResultViewModel)Session[resultId];
+                return View("WebsiteView", model);
+            }
+            else
+            {
+                TimeResultViewModel model = new TimeResultViewModel() { Op = "TellTime", HourMinutes = null, Cols = 4, Rows = 6 };
+                return View("WebsiteView", model);
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult TellTime(TimeResultViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                MathService svc = new MathService();
+                TimeResultViewModel newModel = svc.GetTimeResultViewModel(model);
+                newModel.Op = "TellTime";
+                return RedirectToAction("TellTime", new { resultId = newModel.ResultId });
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+
+
+
+
+        //public string RenderViewAsString(string viewName, object model)
+        //{
+        //    // create a string writer to receive the HTML code
+        //    StringWriter stringWriter = new StringWriter();
+
+        //    // get the view to render
+        //    ViewEngineResult viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, null);
+        //    // create a context to render a view based on a model
+        //    ViewContext viewContext = new ViewContext(
+        //            ControllerContext,
+        //            viewResult.View,
+        //            new ViewDataDictionary(model),
+        //            new TempDataDictionary(),
+        //            stringWriter
+        //            );
+
+        //    // render the view to a HTML code
+        //    viewResult.View.Render(viewContext, stringWriter);
+
+        //    // return the HTML code
+        //    return stringWriter.ToString();
+        //}
 
         [HttpGet]
         public ActionResult ExportResultToPDF2(string resultId)

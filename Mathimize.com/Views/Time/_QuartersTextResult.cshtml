@@ -1,0 +1,99 @@
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
+@*HourMinutes*@
+@{
+    if (Model != null && ((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes != null)
+    {
+
+
+        int i = 0;
+
+        for (int r = 0; r < Model.Rows; r++)
+        {
+    <div class="row">
+        @for (int c = 0; c < Model.Cols; c++)
+        {
+                
+                
+            <div class="span2 border time_box">
+            <p>
+                @{
+            string hoursText="";
+
+            switch (((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Hour)
+            {
+                case 12:
+                    hoursText = "Twelve";
+                    break;
+                case 11:
+                    hoursText = "Eleven";
+                    break;
+                case 10:
+                    hoursText = "Ten";
+                    break;
+                case 9:
+                    hoursText = "Nine";
+                    break;
+                case 8:
+                    hoursText = "Eight";
+                    break;
+                case 7:
+                    hoursText = "Seven";
+                    break;
+                case 6:
+                    hoursText = "Six";
+                    break;
+                case 5:
+                    hoursText = "Five";
+                    break;
+                case 4:
+                    hoursText = "Four";
+                    break;
+                case 3:
+                    hoursText = "Three";
+                    break;
+
+                case 2:
+                    hoursText = "Two";
+                    break;
+                case 1:
+                    hoursText = "One";
+                    break;
+
+            }
+
+            int minutes = (((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Minutes / 15) * 15;
+            
+            if (minutes == 0)
+            {
+                @hoursText @:o'clock
+            }
+            else if (minutes == 15)
+            {
+                @:Quarter past @hoursText
+            }
+            else if (minutes == 30)
+            {
+                @:Half past @hoursText
+            }                         
+            else if (minutes == 45)
+            {
+                @:Quarter to @hoursText
+            } 
+                        
+                }
+                </p>
+                <img src="../../images/clockface.gif" />
+                
+                @{
+            i++;
+                }
+            </div>
+                    
+        }
+    </div>
+        }
+
+    }
+
+
+}

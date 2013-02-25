@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdditionController.cs" />
+    <Compile Include="Controllers\AMathimizeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -308,7 +309,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_TopNavBar.cshtml" />
     <Content Include="Views\Addition\_TensForm.cshtml" />
     <Content Include="Views\Addition\_TensResult.cshtml" />
@@ -331,6 +334,12 @@
     <Content Include="Views\Shared\_Footer.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Time\_QuartersForm.cshtml" />
+    <Content Include="Views\Time\_QuartersResult.cshtml" />
+    <Content Include="Views\Time\_QuartersTextForm.cshtml" />
+    <Content Include="Views\Time\_QuartersTextResult.cshtml" />
+    <Content Include="Views\Time\_TellTimeForm.cshtml" />
+    <Content Include="Views\Time\_TellTimeResult.cshtml" />
     <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
     <None Include="_bin_deployableAssemblies\WebMatrix.WebData.xml" />
     <None Include="_bin_deployableAssemblies\WebMatrix.WebData.dll" />

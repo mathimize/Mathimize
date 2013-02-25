@@ -1,0 +1,35 @@
+﻿@model Mathimize.com.Models.AMmathimizeViewModel
+           @*HourMinutes*@
+@{
+        if (Model != null && ((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes != null)
+        {
+        
+        
+            int i = 0;
+
+            for (int r = 0; r < Model.Rows; r++)
+            {
+        <div class="row">
+            @for (int c = 0; c < Model.Cols; c++)
+            {
+                
+                
+                <div class="span2 border time_box">
+                    @{
+                        int minutes = (((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Minutes / 15) * 15;
+                    }
+                    @(((Mathimize.com.Models.TimeResultViewModel)Model).HourMinutes[i].Hour) : @(minutes.ToString("D2"))
+                    <img src="../../images/clockface.gif" />
+                    @{
+                i++;
+                        }
+                </div>
+                    
+            }
+        </div>
+            }
+
+        }
+
+
+    }
